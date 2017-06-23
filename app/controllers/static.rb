@@ -2,7 +2,11 @@
 
 get '/' do
   # let user create new short URL, display a list of shortened URLs
-  @new_url = Url.last   
+  if Url.all.length == 0
+    @new_url = {long_url: "",short_url: "",count: ""}
+  else
+  @new_url = Url.last
+  end   
   erb :"static/index"
 end
 
