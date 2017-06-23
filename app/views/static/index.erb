@@ -1,2 +1,26 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+
+<div class="header">
+<h1>Cut The Crap</h1>
+</div>
+
+<div class="form" id="error">
+<form action="/long_url" method="post">
+    <input type="text" name="long_url" placeholder="Paste a link to shorten it">
+    <input type="submit" value="shorten">
+ </form>
+</div>
+
+<table style="width: 100%">
+    <tr>
+        <th>Origin URL</th>
+        <th>Shortened URL</th>
+        <th>Click Counts</th>
+    </tr>
+    <tr>
+        <td><%= @new_url.long_url %></td>
+        <td><a id= "clickcount" href="<%= @new_url.short_url %>" target="_blank"><%= @new_url.short_url %></a></td>
+        <td class=counter>0</td>
+
+    </tr>
+  
+</table>
